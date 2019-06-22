@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/cards'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Card Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-text color="primary">
+      <h2>{{card['supertype']}}: {{card.name}}</h2>
+    </ion-text>
+    <ion-text color="secondary">
+        <h5>Rarity: {{card['rarity']}}</h5>
+        <h5>Set: {{card['set']}}</h5>
+    </ion-text>
+  </div>
+  <ion-list class="ion-padding">
+    <ion-item *ngFor="let attack of card['attacks']">
+      <ion-text color="danger">
+          Attack: {{attack['name']}} - Cost: {{attack['damage']}}
+      </ion-text>
+    </ion-item> 
+  </ion-list>
+</ion-content>
